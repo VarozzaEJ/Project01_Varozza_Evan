@@ -1,4 +1,3 @@
-import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.Random;
 import java.util.Scanner;
@@ -9,37 +8,31 @@ public class ParkingFinder {
     public static void main(String[] args) {
         Scanner kbdInput = new Scanner(System.in);
         long seed;
-        int timeNeededToPark, carX, carY, distanceOne, distanceTwo, distanceThree, distanceFour, closestSpotDistance;
+        int timeNeededToPark, distanceOne, distanceTwo, carX, carY, distanceThree, distanceFour, closestSpotDistance;
         double priceOne, priceTwo, priceThree, priceFour;
-        double random = Math.random() * 99;
-        double randomTwo = Math.random() * 99;
-        double randomThree = Math.random() * 99;
-        double randomFour = Math.random() * 99;
-        double randomFive = Math.random() * 99;
-        double randomSix = Math.random() * 99;
-        double randomSeven = Math.random() * 99;
-        double randomEight = Math.random() * 99;
         String strtOne = "1st Street";
         String strtTwo = "2nd Street";
         String strtThree = "3rd Street";
         String strtFour = "4th Street";
         NumberFormat fmt = NumberFormat.getCurrencyInstance();
         
-
-        carX = (int) (Math.random() * 99);
-        carY = (int) (Math.random() * 99);
-        
         System.out.println("Enter a random seed number");
         seed = kbdInput.nextLong();
+
+        Random rand = new Random(seed);
         
+        carX = rand.nextInt(99);
+        carY = rand.nextInt(99);
+
         System.out.println("How long (minutes) do you need to park for?");
         timeNeededToPark = kbdInput.nextInt();
         System.out.println();
         System.out.println("The position of your vehicle is: " + "X: " + carX + " " +  "Y: " + carY);
-        ParkingSpot spotOne = new ParkingSpot(strtOne, (int) random, (int) randomTwo);
-        ParkingSpot spotTwo = new ParkingSpot(strtTwo, (int) randomThree, (int) randomFour);
-        ParkingSpot spotThree = new ParkingSpot(strtThree, (int) randomFive, (int) randomSix);
-        ParkingSpot spotFour = new ParkingSpot(strtFour, (int) randomSeven, (int) randomEight);
+
+        ParkingSpot spotOne = new ParkingSpot(strtOne,  rand.nextInt(99), rand.nextInt(99));
+        ParkingSpot spotTwo = new ParkingSpot(strtTwo, rand.nextInt(99), rand.nextInt(99));
+        ParkingSpot spotThree = new ParkingSpot(strtThree, rand.nextInt(99), rand.nextInt(99));
+        ParkingSpot spotFour = new ParkingSpot(strtFour, rand.nextInt(99), rand.nextInt(99));
         ParkingSpot closestSpot;
         
         spotThree.setCostPerInterval(0.30);
