@@ -21,18 +21,18 @@ public class ParkingFinder {
 
         Random rand = new Random(seed);
         
-        carX = rand.nextInt(99);
-        carY = rand.nextInt(99);
+        carX = rand.nextInt(100);
+        carY = rand.nextInt(100);
 
         System.out.println("How long (minutes) do you need to park for?");
         timeNeededToPark = kbdInput.nextInt();
         System.out.println();
         System.out.println("The position of your vehicle is: " + "X: " + carX + " " +  "Y: " + carY);
 
-        ParkingSpot spotOne = new ParkingSpot(strtOne,  rand.nextInt(99), rand.nextInt(99));
-        ParkingSpot spotTwo = new ParkingSpot(strtTwo, rand.nextInt(99), rand.nextInt(99));
-        ParkingSpot spotThree = new ParkingSpot(strtThree, rand.nextInt(99), rand.nextInt(99));
-        ParkingSpot spotFour = new ParkingSpot(strtFour, rand.nextInt(99), rand.nextInt(99));
+        ParkingSpot spotOne = new ParkingSpot(strtOne,  rand.nextInt(100), rand.nextInt(100));
+        ParkingSpot spotTwo = new ParkingSpot(strtTwo, rand.nextInt(100), rand.nextInt(100));
+        ParkingSpot spotThree = new ParkingSpot(strtThree, rand.nextInt(100), rand.nextInt(100));
+        ParkingSpot spotFour = new ParkingSpot(strtFour, rand.nextInt(100), rand.nextInt(100));
         ParkingSpot closestSpot;
         
         spotThree.setCostPerInterval(0.30);
